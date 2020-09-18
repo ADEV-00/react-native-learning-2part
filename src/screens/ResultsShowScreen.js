@@ -17,7 +17,6 @@ const ResultsShowScreen = ({ route }) => {
   if (!result) {
     return null;
   }
-
   return (
     <View>
       <FlatList
@@ -33,10 +32,17 @@ const ResultsShowScreen = ({ route }) => {
       <Text style={styles.ratingWrapper}>{result.rating} Stars</Text>
       <Text style={styles.titleWrapper}>{result.name}</Text>
       <View style={styles.infoWrapper}>
-        <Text>Info</Text>
+        <Text
+          style={{
+            fontSize: 17,
+            fontWeight: "bold",
+            marginBottom: 10,
+          }}
+        >
+          Info
+        </Text>
         <Text>Address: {result.location.display_address}</Text>
         <Text>Phone Number: {result.display_phone}</Text>
-        <Text>{result.hours.is_open_now ? "Open" : "Closed"}</Text>
         <Text></Text>
       </View>
     </View>
@@ -70,6 +76,18 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 160,
     right: 10,
+  },
+  infoWrapper: {
+    backgroundColor: "white",
+    marginHorizontal: 20,
+    paddingVertical: 20,
+    paddingHorizontal: 30,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 3,
   },
 });
 
