@@ -17,6 +17,8 @@ const ResultsShowScreen = ({ route }) => {
   if (!result) {
     return null;
   }
+
+  console.log(result);
   return (
     <View>
       <FlatList
@@ -41,8 +43,17 @@ const ResultsShowScreen = ({ route }) => {
         >
           Info
         </Text>
-        <Text>Address: {result.location.display_address}</Text>
-        <Text>Phone Number: {result.display_phone}</Text>
+        <Text>
+          Address:{" "}
+          <Text style={{ fontWeight: "bold" }}>
+            {" "}
+            {result.location.display_address}
+          </Text>
+        </Text>
+        <Text>
+          Phone Number:{" "}
+          <Text style={{ fontWeight: "bold" }}>{result.display_phone}</Text>
+        </Text>
         <Text></Text>
       </View>
     </View>
@@ -53,6 +64,8 @@ const styles = StyleSheet.create({
   image: {
     height: 200,
     width: 300,
+    borderWidth: 10,
+    borderColor: "white",
   },
   titleWrapper: {
     fontSize: 19,
